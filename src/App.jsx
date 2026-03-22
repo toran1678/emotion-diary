@@ -4,7 +4,7 @@ import Home from "./pages/Home"
 import Diary from "./pages/Diary"
 import New from "./pages/New"
 import Notfound from "./pages/Notfound"
-import Button from "./components/button"
+import Button from "./components/Button"
 
 import { getEmotionImage } from "./util/get-emotion-image"
 
@@ -20,7 +20,20 @@ function App() {
 
   return (
     <>
-      <Button text={"123"} onClick={()=>{console.log("버튼 클릭")}} />
+      <Button text={"123"}
+      type={"DEFAULT"}
+      onClick={()=>{console.log("버튼 클릭")}}
+      />
+
+      <Button text={"123"}
+      type={"POSITIVE"}
+      onClick={()=>{console.log("버튼 클릭")}}
+      />
+
+      <Button text={"123"}
+      type={"NEGATIVE"}
+      onClick={()=>{console.log("버튼 클릭")}}
+      />
       
       <Routes>
         <Route path="/" element={<Home />} />
