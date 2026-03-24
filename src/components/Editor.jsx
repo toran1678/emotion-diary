@@ -3,24 +3,8 @@ import EmotionItem from "./EmotionItem"
 import Button from "./Button"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { emotionList } from "../util/constants";
-
-const getStringedDate = (targetDate) => {
-  // 날짜 -> YYYY-MM-DD
-  let year = targetDate.getFullYear();
-  let month = targetDate.getMonth() + 1;
-  let day = targetDate.getDate();
-
-  if (month < 10) {
-    month = `0${month}`;
-  }
-
-  if (day < 10) {
-    day = `0${day}`;
-  }
-
-  return `${year}-${month}-${day}`;
-}
+import { emotionList } from "../util/constants"
+import { getStringedDate } from "../util/get-stringed-date"
 
 const Editor = ({ initData, onSubmit }) => {
   const [input, setInput] = useState({
