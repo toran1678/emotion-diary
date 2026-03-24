@@ -5,7 +5,7 @@ import App from './App.jsx'
 import './index.css'
 
 ReactDom.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/emotion-diary">
     <App />
   </BrowserRouter>
 )
