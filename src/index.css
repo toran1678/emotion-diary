@@ -1,26 +1,62 @@
+:root {
+  --bg-color: #fdfbf7;
+  --root-bg: #ffffff;
+  --text-primary: #4a4036;
+  --border-color: #eae5db;
+  --control-bg: #f8f6f0;
+  --emotion-1: #88c7a1;
+  --emotion-2: #b3d4a8;
+  --emotion-3: #f6d365;
+  --emotion-4: #f7a072;
+  --emotion-5: #e07a5f;
+  --primary: var(--emotion-1);
+  --primary-hover: #71ad8a;
+  --negative: var(--emotion-5);
+  --negative-hover: #bd624b;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 40px rgba(0, 0, 0, 0.06);
+  --font-diary: 'NanumPenScript', cursive;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.2s ease-in-out;
+}
+
 @font-face {
   font-family: "NanumPenScript";
   src: url("/fonts/NanumPenScript-Regular.ttf");
 }
 
 html, body {
-  margin: 0px;
+  margin: 0;
   width: 100%;
-  background-color: rgb(246, 246, 246);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
   display: flex;
+  font-family: var(--font-diary);
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  background-color: white;
+  background-color: var(--root-bg);
   max-width: 600px;
   width: 100%;
-  margin: 0 auto;
-  min-height: 100vh;
-  height: 100%;
-  box-shadow: rgba(100, 100, 100, 0.2) 0px 0px 29px 0px;
-  padding: 0px 20px;
+  margin: 2vh auto;
+  min-height: 96vh;
+  box-shadow: var(--shadow-md);
+  padding: 0 20px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
-body * {
-  font-family: 'NanumPenScript';
+@media (max-width: 640px) {
+  #root {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+  }
 }
+
+/* Using diary font universally as requested */

@@ -1,19 +1,52 @@
 .Button {
-  background-color: rgb(236, 236, 236);
+  background-color: var(--control-bg);
   cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: 12px 24px;
   font-size: 18px;
   white-space: nowrap;
+  transition: var(--transition);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.Button_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.Button:active {
+  transform: scale(0.98);
 }
 
 .Button_POSITIVE {
-  background-color: rgb(100, 201, 100);
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: white;
 }
 
+.Button_POSITIVE:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
 .Button_NEGATIVE {
-  background-color: rgb(253, 86, 95);
+  background-color: var(--negative);
+  border-color: var(--negative);
   color: white;
+}
+
+.Button_NEGATIVE:hover {
+  background-color: var(--negative-hover);
+  border-color: var(--negative-hover);
 }

@@ -5,6 +5,7 @@ import Viewer from "../components/Viewer"
 import useDiary from "../hooks/userDiary"
 import { getStringedDate } from "../util/get-stringed-date";
 import usePageTitle from "../hooks/usePageTitle"
+import { ChevronLeft, Edit2 } from 'lucide-react';
 
 const Diary = () => {
   const params = useParams();
@@ -26,12 +27,14 @@ const Diary = () => {
         title={`${title} 기록`}
         leftChild={
           <Button
-            text={"< 뒤로 가기"}
+            icon={<ChevronLeft size={18} />}
+            text={"뒤로 가기"}
             onClick={() => nav(-1)}
           />
         }
         rightChild={
           <Button
+            icon={<Edit2 size={18} />}
             text={"수정하기"}
             onClick={() => nav(`/edit/${params.id}`)}
           />

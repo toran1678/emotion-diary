@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { DiaryDispatchContext } from "../App"
 import usePageTitle from "../hooks/usePageTitle"
+import { ChevronLeft } from 'lucide-react';
 
 const New = () => {
   const nav = useNavigate();
@@ -26,7 +27,8 @@ const New = () => {
       <Header
         title={"새 일기 쓰기"}
         leftChild={<Button
-          text={"< 뒤로 가기"}
+          icon={<ChevronLeft size={18} />}
+          text={"뒤로 가기"}
           onClick={() => nav(-1)}
         />}
       />

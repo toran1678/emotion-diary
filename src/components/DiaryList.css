@@ -1,17 +1,24 @@
 .DiaryList .menu_bar {
-  margin: 20px 0px;
+  margin: 20px 0;
   display: flex;
   gap: 10px;
 }
 
 .DiaryList .menu_bar select {
-  background-color: rgb(236, 236, 236);
-  border: none;
-  border-radius: 5px;
-
+  background-color: var(--control-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-primary);
+}
+
+.DiaryList .menu_bar select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(100, 201, 100, 0.2);
 }
 
 .DiaryList .menu_bar button {

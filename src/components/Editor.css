@@ -5,23 +5,37 @@
 .Editor > section > h4 {
   font-size: 22px;
   font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .Editor > section > input,
-textarea {
-  background-color: rgb(236, 236, 236);
-  border: none;
-  border-radius: 5px;
+.Editor > section > textarea {
+  background-color: var(--control-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   font-size: 20px;
   padding: 10px 20px;
+  transition: var(--transition);
+  font-family: var(--font-diary);
+  color: var(--text-primary);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Editor > section > input:focus,
+.Editor > section > textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(100, 201, 100, 0.2);
+  background-color: var(--root-bg);
 }
 
 .Editor > section > textarea {
-  padding: 20px;
-  width: 100%;
   min-height: 200px;
   resize: vertical;
-  box-sizing: border-box;
 }
 
 .Editor .emotion_section .emotion_list_wrapper {

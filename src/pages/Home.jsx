@@ -5,6 +5,7 @@ import Header from "../components/Header"
 import Button from "../components/Button"
 import DiaryList from "../components/DiaryList"
 import usePageTitle from "../hooks/usePageTitle"
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
@@ -47,8 +48,8 @@ const Home = () => {
         title={`${pivotDate.getFullYear()}년 ${
           pivotDate.getMonth() + 1
         }월`}
-        leftChild={<Button onClick={onDecreaseMonth} text={"<"} />}
-        rightChild={<Button onClick={onIncreaseMonth} text={">"} />}
+        leftChild={<Button onClick={onDecreaseMonth} icon={<ChevronLeft size={24} />} text={""} />}
+        rightChild={<Button onClick={onIncreaseMonth} icon={<ChevronRight size={24} />} text={""} />}
       />
       <DiaryList data={monthlyData} />
     </div>

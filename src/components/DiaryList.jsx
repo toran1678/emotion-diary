@@ -3,6 +3,7 @@ import Button from "./Button"
 import DiaryItem from "./DiaryItem"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { Plus } from 'lucide-react';
 
 const DiaryList = ({ data }) => {
   const nav = useNavigate();
@@ -32,6 +33,7 @@ const DiaryList = ({ data }) => {
           <option value={"oldest"}>오래된 순</option>
         </select>
         <Button
+          icon={<Plus size={18} />}
           onClick={() => nav("/new")}
           text={"새 일기 쓰기"}
           type={"POSITIVE"}

@@ -1,9 +1,16 @@
 .EmotionItem {
-  background-color: rgb(236, 236, 236); 
+  background-color: var(--control-bg); 
   padding: 20px;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   text-align: center;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.EmotionItem:hover {
+  transform: scale(1.05);
+  background-color: #e9ecef;
 }
 
 .EmotionItem .emotion_img {
@@ -11,23 +18,16 @@
   margin-bottom: 10px;
 }
 
-.EmotionItem_on_1 {
-  color: white;
-  background-color: rgb(100, 201, 100);
+.EmotionItem span {
+  font-size: 18px;
 }
-.EmotionItem_on_2 {
-  color: white;
-  background-color: rgb(157, 215, 114);
-}
-.EmotionItem_on_3 {
-  color: white;
-  background-color: rgb(253, 206, 23);
-}
-.EmotionItem_on_4 {
-  color: white;
-  background-color: rgb(253, 132, 70);
-}
-.EmotionItem_on_5 {
-  color: white;
-  background-color: rgb(253, 86, 95);
+
+.EmotionItem_on_1 { color: white; background-color: var(--emotion-1); box-shadow: 0 4px 15px #88c7a166; }
+.EmotionItem_on_2 { color: white; background-color: var(--emotion-2); box-shadow: 0 4px 15px #b3d4a866; }
+.EmotionItem_on_3 { color: white; background-color: var(--emotion-3); box-shadow: 0 4px 15px #f6d36566; }
+.EmotionItem_on_4 { color: white; background-color: var(--emotion-4); box-shadow: 0 4px 15px #f7a07266; }
+.EmotionItem_on_5 { color: white; background-color: var(--emotion-5); box-shadow: 0 4px 15px #e07a5f66; }
+
+.EmotionItem_on_1:hover, .EmotionItem_on_2:hover, .EmotionItem_on_3:hover, .EmotionItem_on_4:hover, .EmotionItem_on_5:hover {
+  transform: scale(1.05);
 }

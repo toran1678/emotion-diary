@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { emotionList } from "../util/constants"
 import { getStringedDate } from "../util/get-stringed-date"
+import { Calendar, Smile, PenTool, XCircle, CheckCircle } from 'lucide-react';
 
 const Editor = ({ initData, onSubmit }) => {
   const [input, setInput] = useState({
@@ -45,7 +46,7 @@ const Editor = ({ initData, onSubmit }) => {
   return (
     <div className="Editor">
       <section className="date_section">
-        <h4>오늘의 날짜</h4>
+        <h4><Calendar size={22} /> 오늘의 날짜</h4>
         <input
           name="createdDate"
           value={getStringedDate(input.createdDate)}
@@ -54,7 +55,7 @@ const Editor = ({ initData, onSubmit }) => {
         />
       </section>
       <section className="emotion_section">
-        <h4>오늘의 감정</h4>
+        <h4><Smile size={22} /> 오늘의 감정</h4>
         <div className="emotion_list_wrapper">
           {emotionList.map((item) => (
             <EmotionItem
@@ -72,7 +73,7 @@ const Editor = ({ initData, onSubmit }) => {
         </div>
       </section>
       <section className="content_section">
-        <h4>오늘의 일기</h4>
+        <h4><PenTool size={22} /> 오늘의 일기</h4>
         <textarea
           name="content"
           value={input.content}
@@ -82,10 +83,12 @@ const Editor = ({ initData, onSubmit }) => {
       </section>
       <section className="button_section">
         <Button
+          icon={<XCircle size={18} />}
           text={"취소하기"}
           onClick={() => nav(-1)}
         />
         <Button
+          icon={<CheckCircle size={18} />}
           onClick={onClickSubmitButton}
           text={"작성완료"}
           type={"POSITIVE"}

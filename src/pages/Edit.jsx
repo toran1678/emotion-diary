@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react"
 import { DiaryDispatchContext, DiaryStateContext } from "../App"
 import useDiary from "../hooks/userDiary"
 import usePageTitle from "../hooks/usePageTitle"
+import { ChevronLeft, Trash2 } from 'lucide-react';
 
 const Edit = () => {
   const params = useParams();
@@ -40,12 +41,14 @@ const Edit = () => {
         title={"일기 수정하기"}
         leftChild={
           <Button
-            text={"< 뒤로 가기"}
+            icon={<ChevronLeft size={18} />}
+            text={"뒤로 가기"}
             onClick={() => nav(-1)} />
         }
         rightChild={
           <Button
             onClick={onClickDelete}
+            icon={<Trash2 size={18} />}
             text={"삭제하기"}
             type={"NEGATIVE"} />
         }
